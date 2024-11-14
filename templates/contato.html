@@ -1,0 +1,37 @@
+{% extends "base.html" %}
+
+{% block title %}EmpreGO! - Contato{% endblock %}
+
+{% block content %}
+    <div class="container">
+        <h1>Contato | EmpreGO</h1>
+        <p>Entre em contato conosco preenchendo o formulário abaixo.</p>
+
+        <form action="/enviar-mensagem" method="post">
+            <div class="form-floating mb-3">
+                <input type="text" id="nome" name="nome" class="form-control" placeholder="." required>
+                <label  for="nome">Nome</label>
+            </div><br>
+            <div class="form-floating mb-3">
+                <input type="email" id="email" name="email" class="form-control" placeholder="." required>
+                <label for="email">E-mail</label>
+            </div><br>
+            <div class="form-floating mb-3">
+                <input type="text" id="assunto" name="assunto" class="form-control" placeholder="." required>
+                <label for="assunto">Assunto</label>
+            </div><br>
+            <div class="form-floating mb-3">
+                <textarea id="mensagem" name="mensagem" class="form-control" placeholder="." required></textarea>
+                <label for="mensagem">Mensagem</label>
+            </div><br>
+            <button type="submit" class="btn btn-dark mb-3">Enviar Mensagem</button><br><br>
+        </form>
+        
+        <div class="contact-info">
+            <p><strong>Telefone:</strong> (11) 98765-4321</p>
+            <p><strong>E-mail:</strong> contato@emprego.com.br</p>
+            <p><strong>Endereço:</strong> Rua dos Empreendedores, 123, São Paulo - SP</p>
+        </div>
+    </div>
+
+{% endblock %}
