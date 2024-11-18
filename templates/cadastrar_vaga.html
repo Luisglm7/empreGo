@@ -15,10 +15,12 @@
                 </div>
             {% endif %}
 
-            <form action="/cadastrar_vaga" method="post">
+            <form action="/cadastrar_vaga" method="post" class="needs-validation" novalidate>
                 <div class="form-floating mb-3">
                     <input type="text" class="form-control" id="titulo" name="titulo" placeholder="." required>
                     <label for="titulo" class="form-label">Título da Vaga</label>
+                    <div class="valid-feedback">
+                      </div>
                 </div>
                 <div class="form-floating mb-3">
                     <textarea class="form-control" id="descricao" name="descricao" rows="5" placeholder="." required></textarea>
@@ -54,5 +56,24 @@
         </div>
     </div>
 </div>
-
+<script>
+(() => {
+    'use strict'
+  
+    // Fetch all the forms we want to apply custom Bootstrap validation styles to
+    const forms = document.querySelectorAll('.needs-validation')
+  
+    // Loop over them and prevent submission
+    Array.from(forms).forEach(form => {
+      form.addEventListener('submit', event => {
+        if (!form.checkValidity()) {
+          event.preventDefault()
+          event.stopPropagation()
+        }
+  
+        form.classList.add('was-validated')
+      }, false)
+    })
+  })()
+</script>
 {% endblock %}

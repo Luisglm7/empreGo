@@ -436,7 +436,7 @@ def cadastrarvaga():
         id_empresa = session['id_empresa']
 
         if not titulo or not descricao or not formato or not tipo:
-            return render_template('cadastrarvaga.html', msg_erro="Os campos obrigatório precisam estar preenchidos!")
+            return render_template('cadastrar_vaga.html', msg_erro="Os campos obrigatório precisam estar preenchidos!")
         
         try:
             conexao, cursor = conectar_db()
