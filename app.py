@@ -34,7 +34,7 @@ def index():
     except Exception as erro:
         return f"ERRO! Outros erros: {erro}"
     finally:
-        encerrar_db(cursor, conexao)
+        encerrar_db(conexao, cursor)
 
 # Rota da pagina login (GET e o POST)
 # ROTA DA PÁGINA DE LOGIN
